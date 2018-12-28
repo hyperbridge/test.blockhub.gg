@@ -75,7 +75,11 @@ export const initApp = () => {
     app.commandLine.appendSwitch('disable-web-security')
     app.commandLine.appendSwitch('disable-renderer-backgrounding')
     app.commandLine.appendSwitch('disable-background-timer-throttling')
+    app.commandLine.appendSwitch('disable-gpu')
+    app.commandLine.appendSwitch('ignore-gpu-blacklist')
+    app.commandLine.appendSwitch('headless')
     app.commandLine.appendSwitch('force-color-profile', 'srgb')
+    app.disableHardwareAcceleration()
 
     if (process.platform === 'darwin') {
         installDarwin()

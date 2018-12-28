@@ -13,7 +13,7 @@
     "scripts": {
         "build": "rm -rf build && cp -R src/ build && ./node_modules/.bin/babel src --out-dir build",
         "start": "npm run build && electron ./build/main/index.js",
-        "dev": "npm run build && ./node_modules/.bin/electron . --dev --tools"
+        "dev": "npm run build && ./node_modules/.bin/electron . --dev --tools --disable-gpu --ignore-gpu-blacklist"
     },
     "dependencies": {
         "@babel/runtime-corejs2": "^7.1.5",
@@ -60,24 +60,5 @@
         "buble": "^0.19.6",
         "electron": "^2.0.13"
     },
-    "optionalDependencies": {},
-    "babel": {
-        "env": {
-            "test": {
-                "presets": [
-                    [
-                        "env",
-                        {
-                            "targets": {
-                                "node": "current"
-                            }
-                        }
-                    ]
-                ],
-                "plugins": [
-                    "require-context-hook"
-                ]
-            }
-        }
-    }
+    "optionalDependencies": {}
 }
